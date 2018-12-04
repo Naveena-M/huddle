@@ -1,40 +1,34 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router';
-
-import icons from '../icons/Svg.js';
-class App extends Component {
-	constructor(props) {
-		super(props);
-	}
+import Header from './Header';
+class App extends PureComponent {
 	render() {
 		return (
 			<div>
-				<header className="App-header">
-					<icons.FbIcon />
-				</header>
+				<Header />
 				<div className="left-pane">
-						<h3>
-							<Link
-								href
-								to={`/posts/`}
-								title="All Posts"
-							>
-								Posts
+					<h3>
+						<Link
+							href
+							to={`/posts/`}
+							title="All Posts"
+						>
+							Posts
 
 						</Link>
-						</h3>
-						<h3>
-							<Link
-								href
-								to={`/users/1`}
-								title="My Profile"
-							>
-								My Profile
+					</h3>
+					<h3>
+						<Link
+							href
+							to={`/users/1`}
+							title="My Profile"
+						>
+							My Profile
 						</Link>
-						</h3>
+					</h3>
 				</div>
 				<div>
-					<div className="right-pane">
+					<div className="right-pane" id="parent">
 						{this.props.children}
 					</div>
 				</div>

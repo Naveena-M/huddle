@@ -31,7 +31,7 @@ class Post extends Component {
                             <span> {post.user.name[0]} </span>
                         </div>
                         <a
-                            href
+                            href="#"
                             onClick={this.onUserClick}
                         >
                             {post.user.name}

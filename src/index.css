@@ -128,3 +128,47 @@ a{
 .left-tabbable.tabs-left {
   padding-bottom: 42px;
 }
+/* text box*/
+.search-box-global.clickclass {
+  width: 225px;
+  transition: .2s ease-in-out;
+  border: 1px solid #696969;
+  background-color: #ffffff;
+}
+
+.search-box-global {
+  margin-right: 235px;
+  float: right;
+  padding-right: -16px;
+  padding-left: 15px;
+  height: 24px;
+  border-radius: 23px;
+  transition: .2s ease-in-out;
+  border: 0;
+  /* width: 0; */
+  background: transparent;
+  font-size: 15px;
+}
+.drop-up {
+  top: auto;
+  bottom: 100%!important;
+}
+.global-search-list {
+  /* padding: 0px; */
+  left: 252px;
+  margin-left: 234px;
+  padding-left: 27px;
+  margin-right: px;
+  margin: 35px auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 200%;
+  overflow: auto;
+  position: relative;
+  top: 6px;
+  width: 223px;
+  float: right;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
