@@ -6,9 +6,125 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ddd8d8;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+header {
+  position: fixed;
+  background-color: #FFFFFF;
+  height: 38px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+}
+
+footer {
+  position: fixed;
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #818a91;
+  font-size: 13px;
+  padding: 5px;
+  text-align: center;
+}
+.left-pane {
+  width: 200px;
+  /* background-color: #325071; */
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  padding: 40px;
+  
+}
+
+.right-pane {
+  position: fixed;
+  top: 50px;
+  left: 200px;
+  overflow: auto;
+  padding: 5px;
+  width: 50%;
+  bottom: 15px;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: .25rem;
+  padding: 15px;
+  margin: 5px;
+}
+
+.comment-box {
+  padding: 5px;
+  margin-left: 50px;
+  border-bottom: 2px solid #cccccc;
+}
+
+.comments-header {
+  font-size: 15px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.profile-card {
+  text-align: center;
+}
+.avatar {
+  color: #fff;
+  text-align: center;
+  width: 67px;
+  height: 67px;
+  border: 3px solid #ddd;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 58px;
+  border-radius: 50%;
+  background-color: cadetblue;
+  position: relative;
+  display: inline-block
+}
+.cursor{
+  cursor:pointer;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+}
+.italic{
+  font-size: small;
+  font-style: italic;
+}
+.description{
+  margin:auto;
+}
+.left-pane .left-tabmenu {
+  
+  width: 50px;
+ 
+}
+.left-pane .left-tabmenu li {
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  list-style: none;
+}
+.left-tabbable {
+  overflow: auto;
+  height: 100%;
+  /* background-color: #325071; */
+}
+.left-tabbable {
+   /* background-color: #325071;  */
+}
+.left-tabbable.tabs-left {
+  padding-bottom: 42px;
 }
