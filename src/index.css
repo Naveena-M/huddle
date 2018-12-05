@@ -131,7 +131,6 @@ a{
 /* text box*/
 .search-box-global.clickclass {
   width: 225px;
-  transition: .2s ease-in-out;
   border: 1px solid #696969;
   background-color: #ffffff;
 }
@@ -139,14 +138,10 @@ a{
 .search-box-global {
   margin-right: 235px;
   float: right;
-  padding-right: -16px;
   padding-left: 15px;
   height: 24px;
   border-radius: 23px;
   transition: .2s ease-in-out;
-  border: 0;
-  /* width: 0; */
-  background: transparent;
   font-size: 15px;
 }
 .drop-up {
@@ -180,4 +175,5 @@ a{
   padding: 5px;
   width: 34%;
   bottom: 15px;
+  z-index:-999;
 }
