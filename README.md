@@ -1,12 +1,12 @@
-## MINI FACEBOOK
+## SIMPLE FACEBOOK
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Features on the App include:
-Includes users posts
-Includes a user specific timeline and albums
-Includes user profile 
-Finding user's timeline from search 
+### Features on the App include:
+### Includes users posts
+### Includes a user specific timeline and albums
+### Includes user profile 
+### Finding user's timeline from search 
 
 # Setting up 
 clone the repo to local from https://github.com/Naveena-M/huddle.git ,
