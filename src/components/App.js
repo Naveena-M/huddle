@@ -28,7 +28,7 @@ class App extends PureComponent {
 					<h3>
 						<Link
 							href
-							to={`/users/1`}
+							to={`/users/1/`}
 							title="My Profile"
 						>
 							{

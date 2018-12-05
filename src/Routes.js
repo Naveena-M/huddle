@@ -11,6 +11,7 @@ export default (
     <Router history={browserHistory}>
         <Route
             name="Index"
+            path="/"
             component={App}
         >
             <IndexRedirect to="/posts/" />
@@ -27,7 +28,7 @@ export default (
                 component={ViewPost}
             />
             <Route
-                path="/users/:userId"
+                path="/users/:userId/"
                 component={User}
             />
              <Route
@@ -39,6 +40,6 @@ export default (
                 component={Photos}
             />
         </Route>
-        <Redirect from="*" to={"/404/"} />
+        <Redirect from="*" to="/404/" />
     </Router>
 )
