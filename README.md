@@ -9,10 +9,11 @@ clone the repo to local from https://github.com/Naveena-M/huddle.git ,
 execute the command in the respective directory to install packages  - npm install 
 
 ### Run 
-
-
 Runs the app in the development mode.<br>
 Execute the command - npm start 
+
+### View
+Open http://localhost:3000 to view the application in browser
 
 ### `npm run build`
 
