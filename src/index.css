@@ -172,3 +172,12 @@ a{
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
 }
+.add-pane {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  overflow: auto;
+  padding: 5px;
+  width: 34%;
+  bottom: 15px;
+}

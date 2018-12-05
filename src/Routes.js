@@ -1,10 +1,12 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory, IndexRedirect, useRouterHistory, hashHistory, Redirect } from 'react-router';
+import { Router, Route, browserHistory, IndexRedirect, Redirect } from 'react-router';
 import App from './components/App';
 import Posts from './components/Posts';
 import ViewPost from './components/ViewPost';
 import UserTimeline from './components/UserTimeline';
+import NoPageFound from './components/NoPageFound';
 import User from './components/User';
+import Photos from './components/Photos';
 export default (
     <Router history={browserHistory}>
         <Route
@@ -16,7 +18,7 @@ export default (
                 path="/posts/"
                 component={Posts}
             />
-             <Route
+            <Route
                 path="/users/:userId/posts/"
                 component={UserTimeline}
             />
@@ -28,7 +30,15 @@ export default (
                 path="/users/:userId"
                 component={User}
             />
+             <Route
+                path="/404/"
+                component={NoPageFound}
+            />
+             <Route
+                path="/users/:userId/:albumId/photos/"
+                component={Photos}
+            />
         </Route>
-        <Redirect from="*" to="/posts/" />
+        <Redirect from="*" to={"/404/"} />
     </Router>
 )

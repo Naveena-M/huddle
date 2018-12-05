@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './Routes';
+import { Provider } from 'react-redux';
+import configStore from './store/configStore';
 
 import './index.css';
 
+
+
 import * as serviceWorker from './serviceWorker';
+const storeInitialState = {
+    posts: null
+};
+const store = configStore(storeInitialState);
+
 ReactDOM.render(
-    <div>
+    <Provider store={store}>
         {Routes}
-    </div>
+    </Provider>
     , document.getElementById('root')
 );
 
