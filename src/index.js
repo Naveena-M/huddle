@@ -10,7 +10,7 @@ import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 const storeInitialState = {
-    posts: null
+    comments: null
 };
 const store = configStore(storeInitialState);
 

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import Loading from './Loading';
 
 class Photos extends PureComponent {
@@ -27,18 +27,19 @@ class Photos extends PureComponent {
 				<h3 className="comments-header"> Photos </h3>
 				<div>
 					{
-						this.state.photos.map((photo,index) => {
-							if (index >5) {
+						this.state.photos.map((photo, index) => {
+							if (index > 5) {
 								return null
 							}
-							return [
-								<p>
+							return (
+								<Fragment key={photo.id}>
 									<h4 className="italic">{photo.title}</h4>
 									<img src={photo.url} />
-								</p>,
-								<br />,
-							]
-						})
+									<br />
+								</Fragment>
+							)
+							
+					})
 					}
 				</div>
 			</div>

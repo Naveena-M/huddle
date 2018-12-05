@@ -1,19 +1,21 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+
 import Comment from './Comment';
 import Loading from './Loading';
+import storeComments from '../actions/commentActions';
 
 class Comments extends PureComponent {
 	constructor(props) {
 		super(props);
-		this.state = { comments: null }
 	}
 	componentDidMount() {
 		fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.postId}/comments`)
 			.then(response => response.json())
-			.then(json => this.setState({ comments: json }))
+			.then(json => this.props.storeComments(json))
 	}
 	render() {
-		const { comments } = this.state;
+		const { comments } = this.props;
 		if (!comments) {
 			return (
 				<Loading />
@@ -29,7 +31,7 @@ class Comments extends PureComponent {
 		return (
 			<div>
 				{
-					this.state.comments.map((comment) => {
+					comments.map((comment) => {
 						return (
 							<Comment key={comment.id} comment={comment} />
 						)
@@ -39,5 +41,9 @@ class Comments extends PureComponent {
 		);
 	}
 }
-
-export default Comments;
+const mapStateToProps = ({ comments }) => ({
+	comments,
+});
+export default connect(mapStateToProps, {
+	storeComments,
+})(Comments);

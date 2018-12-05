@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import $ from 'jquery';
 import Post from './Post';
 import Loading from './Loading';
-import storePosts from '../actions/postsActions';
 
 class Posts extends Component {
 	constructor(props) {
 		super(props);
+		this.state = { posts: null }
 	}
 	componentDidMount() {
 		let url = 'https://jsonplaceholder.typicode.com/posts?_expand=user&_page=1&_limit=20'
@@ -22,7 +21,7 @@ class Posts extends Component {
 	componentWillReceiveProps(nextProps) {
 		if (this.props.params.userId !== nextProps.params.userId) {
 			let url = `https://jsonplaceholder.typicode.com/users/${nextProps.params.userId}/posts?_expand=user`
-			this.fetchPosts(url)
+			this.setState({ posts: null }, () => { this.fetchPosts(url) })
 
 		}
 	}
@@ -31,24 +30,24 @@ class Posts extends Component {
 			const maxScrollTop = Math.floor(e.target.scrollHeight - e.target.clientHeight);
 			let delta = Math.floor(e.target.scrollTop) - maxScrollTop;
 			delta = delta < 0 ? -delta : delta
-			if (delta < 2 && this.props.posts) {
-				const page = (this.props.posts.length / 20) + 1
+			if (delta < 2 && this.state.posts) {
+				const page = (this.state.posts.length / 20) + 1
 				let url = `https://jsonplaceholder.typicode.com/posts?_expand=user&_page=${page}&_limit=20`
-				this.fetchPosts(url, 'append')
+				this.fetchPosts(url)
 			}
 		}
 	}
-	fetchPosts = (url, append = false) => {
+	fetchPosts = (url) => {
+		let posts = this.state.posts;
+        if (!posts) {
+            posts = [];
+        }
 		fetch(url)
 			.then(response => response.json())
 			.then(json => {
-				if (append) {
-					this.props.storePosts([...this.props.posts, ...json])
-				} else {
-					this.props.storePosts(json)
-				}
+				this.setState({ posts: [...posts, ...json] })
 			}, () => {
-				this.props.storePosts(this.props.posts)
+				this.setState({ posts: posts })
 			})
 	}
 	componentWillUnmount() {
@@ -56,7 +55,7 @@ class Posts extends Component {
 		id.removeEventListener('scroll', this.onScroll)
 	}
 	render() {
-		const { posts } = this.props;
+		const { posts } = this.state;
 		if (!posts) {
 			return (
 				<Loading />
@@ -76,9 +75,5 @@ class Posts extends Component {
 		)
 	}
 }
-const mapStateToProps = ({ posts }) => ({
-	posts,
-});
-export default connect(mapStateToProps, {
-	storePosts,
-})(Posts);
+
+export default Posts;
