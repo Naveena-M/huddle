@@ -1,29 +1,27 @@
+## MINI FACEBOOK
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Features on the App include:
+Includes users posts
+Includes a user specific timeline and albums
+Includes user profile 
+Finding user's timeline from search 
 
-In the project directory, you can run:
-
-## Setup
+# Setting up 
 clone the repo to local from https://github.com/Naveena-M/huddle.git ,
-execute the command in the respective directory to install packages  - npm install 
+execute the below command in the respective directory to install packages  -
+### npm install 
 
-### Run 
-Runs the app in the development mode.<br>
-Execute the command - npm start 
+# Running the application  
+To Run the app in the development mode.<br>
+Execute the command - 
+### npm start 
 
-### View
+# Build for produciton
+Execute the following command to make the application production ready.
+### npm run build
+
+
+# View
 Open http://localhost:3000 to view the application in browser
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-
