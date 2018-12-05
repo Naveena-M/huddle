@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ## Setup
-clone the repo to local from https://github.com/Naveena-M/huddle.git
+clone the repo to local from https://github.com/Naveena-M/huddle.git ,
 execute the command in the respective directory to install packages  - npm install 
 
 ### Run 
